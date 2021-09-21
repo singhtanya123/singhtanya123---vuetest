@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     button{
         padding: 1%;
         float: right;
