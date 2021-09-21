@@ -44,6 +44,45 @@
 <script>
 export default {
   el: "#userform",
+  data(){
+    return {
+      firstName:'',
+      lastName:'',
+      email:'',
+      phoneNumber:'',
+    };
+  },
+  methods:{
+    onSubmit(e){
+      e.preventDefault();
+      if(!this.firstName){
+        alert("Please enter your firstname");
+      }
+      if(!this.lastName){
+        alert("Please enter your lastName");
+      }
+      if(!this.email){
+        alert("Please enter your email");
+      }
+      if(!this.phoneNumber){
+        alert("Please enter your phoneNumber");
+      }
+      const newTask ={
+        id:Math.floor(Math.random()),
+        firstName:this.firstName,
+        lastName:this.lastName,
+        email:this.email,
+        phoneNumber:this.phoneNumber
+      };
+      console.log(newTask);
+      this.$emit ("user-form",newTask);
+      this.firstName="",
+      this.lastName=""
+      this.email="",
+      this.phoneNumber="";
+    },
+  },
+ 
 };
 </script>
 
@@ -55,15 +94,15 @@ export default {
   padding: 2%;
 }
 .task-label {
-  margin: 2%;
-  justify-content: center;
+  justify-content: center;    
+  margin-right: 3%;
 }
 input {
   padding: 1%;
 }
 .save-btn {
-  background-color: green;
+  background-color: blue;
   padding: 10px;
-  margin: 3%;
+  margin-left: 2%;
 }
 </style>

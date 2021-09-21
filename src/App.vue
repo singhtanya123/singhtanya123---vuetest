@@ -1,8 +1,7 @@
 <template>
-<div class="main">
+<div >
  <HelloWorld msg="Welcome to Your Vue.js App"/>
  <Dashboard/>
-
   </div>
 </template>
 
@@ -12,7 +11,7 @@ import Dashboard from './components/Dashboard.vue';
 
 
 export default {
-  
+
   name: 'App',
   components: {
     HelloWorld,
@@ -29,9 +28,5 @@ export default {
   margin: 2%;
   margin-top: 60px;
 }
-.main{
-  border: 5px white solid;
-  width: 100%;
-  height: 50%;
-}
+
 </style>
