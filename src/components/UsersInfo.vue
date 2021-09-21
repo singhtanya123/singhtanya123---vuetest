@@ -10,11 +10,11 @@
       </tr>
 
       <tr :key="user.id" v-for="user in users">
-        <td>{{ user.firstName }}</td> 
+        <td>{{ user.name.firstname }}</td> 
 
-        <td>{{ user.lastName }}</td>
+        <td>{{ user.name.lastname }}</td>
         <td>{{ user.email }}</td>
-        <td>{{ user.phoneNumber }}</td>
+        <td>{{ user.phone }}</td>
         <button ><router-link to="/userform"></router-link>Edit </button>
         <button @click="$emit('delete-task', user.id)">Delete</button>
       </tr>

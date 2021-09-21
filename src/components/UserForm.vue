@@ -69,10 +69,10 @@ export default {
       }
       const newTask ={
         id:Math.floor(Math.random()),
-        firstName:this.firstName,
-        lastName:this.lastName,
+        firstname:this.firstName,
+        lastname:this.lastName,
         email:this.email,
-        phoneNumber:this.phoneNumber
+        phone:this.phoneNumber
       };
       console.log(newTask);
       this.$emit ("user-form",newTask);

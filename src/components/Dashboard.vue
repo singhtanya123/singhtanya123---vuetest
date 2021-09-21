@@ -51,53 +51,69 @@ export default {
         this.users = this.users.filter((user) => user.id !== id);
   }
   },
+   async fetchUser(){
+     try{
+    const res= await fetch("https://fakestoreapi.com/users");
+    const data = await res.json();
+    console.log(data);
+    return data; 
+     } catch(error){
+       console.log(error)
+     }
   },
-  created() {
-    this.users = [
-      { 
-        id: '1',
-        firstName: "Leanne ",
-        lastName: "Graham",
-        email: "Sincere@april.biz",
-        phoneNumber: "1-770-736-8031 x56442",
-      },
-      {
-        id:'2',
-        firstName: "Ervin ",
-        lastName: "Howell",
-        email: "Sincere@april.biz",
-        phoneNumber: "1-770-736-8031 x56442",
-      },
-      { 
-        id: '3',
-        firstName: "Eren",
-        lastName: "jager",
-        email: "Sincere@april.biz",
-        phoneNumber: "1-770-736-8031 x56442",
-      },
-      { 
-        id: '4',
-        firstName: "Naruto",
-        lastName: "Chan",
-        email: "Sincere@april.biz",
-        phoneNumber: "1-770-736-8031 x56442",
-      },
-      { 
-        id:'5',
-        firstName: "sakura ",
-        lastName: "flower",
-        email: "Sincere@april.biz",
-        phoneNumber: "1-770-736-8031 x56442",
-      },
-      { 
-        id: '6',
-        firstName: "Sukana",
-        lastName: "yuji",
-        email: "Sincere@april.biz",
-        phoneNumber: "1-770-736-8031 x56442",
-      },
-    ];
   },
+ 
+  async created() {
+    // it is a method ex: this is used to load html at the starting or when page loads
+    this.users = await this.fetchUser()
+  },
+
+  // created() {
+  //   this.users = [
+  //     { 
+  //       id: '1',
+  //       firstName: "Leanne ",
+  //       lastName: "Graham",
+  //       email: "Sincere@april.biz",
+  //       phoneNumber: "1-770-736-8031 x56442",
+  //     },
+  //     {
+  //       id:'2',
+  //       firstName: "Ervin ",
+  //       lastName: "Howell",
+  //       email: "Sincere@april.biz",
+  //       phoneNumber: "1-770-736-8031 x56442",
+  //     },
+  //     { 
+  //       id: '3',
+  //       firstName: "Eren",
+  //       lastName: "jager",
+  //       email: "Sincere@april.biz",
+  //       phoneNumber: "1-770-736-8031 x56442",
+  //     },
+  //     { 
+  //       id: '4',
+  //       firstName: "Naruto",
+  //       lastName: "Chan",
+  //       email: "Sincere@april.biz",
+  //       phoneNumber: "1-770-736-8031 x56442",
+  //     },
+  //     { 
+  //       id:'5',
+  //       firstName: "sakura ",
+  //       lastName: "flower",
+  //       email: "Sincere@april.biz",
+  //       phoneNumber: "1-770-736-8031 x56442",
+  //     },
+  //     { 
+  //       id: '6',
+  //       firstName: "Sukana",
+  //       lastName: "yuji",
+  //       email: "Sincere@april.biz",
+  //       phoneNumber: "1-770-736-8031 x56442",
+  //     },
+  //   ];
+  // },
 }
 </script>
 

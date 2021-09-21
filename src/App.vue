@@ -1,25 +1,18 @@
 <template>
-<div >
- <HelloWorld msg="Welcome to Your Vue.js App"/>
- <Dashboard/>
+  <div>
+    <Dashboard />
   </div>
 </template>
 
 <script>
-
-import HelloWorld from './components/HelloWorld.vue';
-import Dashboard from './components/Dashboard.vue';
-
-
+import Dashboard from "./components/Dashboard.vue";
 
 export default {
-
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld,
-    Dashboard
+    Dashboard,
   },
-}
+};
 </script>
 
 <style>
@@ -30,5 +23,4 @@ export default {
   margin: 2%;
   margin-top: 60px;
 }
-
 </style>
