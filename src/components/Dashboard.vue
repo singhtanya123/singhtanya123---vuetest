@@ -11,7 +11,7 @@
       <UserForm @user-form="addUser"/>
     </div>
 
-    <UsersInfo :users="users" />
+    <UsersInfo :users="users"  @delete-task="deleteTask"/>
   </div>
 </template>
 
@@ -44,6 +44,12 @@ export default {
     },
     addUser(user) {
       this.users = [...this.users, user];
+  },
+  deleteTask(id){
+    console.log(id);
+    if (confirm("Are you sure?")) {
+        this.users = this.users.filter((user) => user.id !== id);
+  }
   },
   },
   created() {
@@ -101,4 +107,5 @@ export default {
   height: 50%;
   width: 100%;
 }
+
 </style>

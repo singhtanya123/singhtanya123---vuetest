@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  el: "#userform",
+  name: "userform",
   data(){
     return {
       firstName:'',
